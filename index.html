@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <!-- fa icon script link  -->
+    <script src="https://use.fontawesome.com/7e50d7d663.js"></script>
+    <!-- end of fa icon script link  -->
+</head>
+<body>
+    
+    <main>
+
+        <div class="app-container">
+
+            <div class="app-header">
+                <div class="company">Recipes App</div>
+                <form action="" id="form">
+                    <input type="text" value="search by name" id="seachBox">
+                    <button class="submit" id="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+
+
+            <div class="app-body" id="app-body">
+
+                <div class="section1">
+                    <div class="favourite-cont">
+                        <ul id="favourites">
+                            <li class="listItem">
+                                <button class="remove"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <img src="/img/1.jpg" alt="" class="food-img" id="dish-img">
+                                <span class="food-name">Barbeque</span>
+                            </li>
+
+                            <li>
+                                <button class="remove"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <img src="/img/2.jpg" alt="" class="food-img" id="dish-img">
+                                <span class="food-name">Spahgetti with sauce</span>
+                            </li>
+
+                            <li>
+                                <button class="remove"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <img src="/img/3.jpg" alt="" class="food-img" id="dish-img">
+                                <span class="food-name">Raatatoulette</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section2">
+                    <div class="dish" id="dishes">
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+    <div class="dish_details" id="dishDetails">
+
+        <div class="food_name">
+            Griiled Fish
+        </div>
+
+        <div class="food_category"><span>Category:</span>Protein</div>
+        
+        <div class="food-cont">
+            <img src="/img/2.jpg" alt="">
+        </div>
+
+        <div class="instruction">
+            <span class="insrct">
+                Instruction:
+            </span>
+            <span class="instruct">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non suscipit minus eligendi explicabo! Exercitationem repellendus labore ab vero tempora asperiores optio. Reprehenderit ipsam qui deserunt adipisci. Id libero ex ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptates culpa illum autem temporibus odio.
+            </span>
+        </div>
+
+        <div class="video-instruction">
+            <iframe src="https://www.youtube.com/embed/Xc6G3oV24yE" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+    <script src="/script.js" type="text/javascript"></script>
+</body>
+</html>

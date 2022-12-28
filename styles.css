@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.app-container{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.app-header{
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+}
+
+.company{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#form{
+    width: 20%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 35px;
+    box-shadow: 0px 0px 1px 2px rgb(39, 38, 38);
+}
+
+#form button{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    height: 40px;
+    width: 30px;
+    font-size: 20px;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+
+
+
+
+.app-body{
+    width: 100%;
+}
+
+.section1{
+    width: 100%;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+#favourites{
+    width: 100%;
+    display: flex;
+    column-gap: 30px;
+    flex-wrap: wrap;
+}
+
+li{
+    width: 90px;
+    height: 120px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+
+#favourites li img{
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+#favourites li button{
+    position: absolute;
+    top: 0;
+    right: -2px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    color: rgb(230, 43, 43);
+    display: none;
+}
+
+#favourites .listItem:hover > .remove{
+    display: block;
+}
+
+
+.food-name{
+    width: 100%;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+}
+
+.section2{
+    width: 100%;
+}
+
+.dish{
+    width: 1005;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
+    padding: 5px 20px;
+}
+
+.eachDish{
+    width: 300px;
+    height: auto;
+    background-color: rgb(238, 238, 238,.75);
+    box-shadow: 0px 0px 1px 1px rgb(68, 67, 67,.5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.random{
+    padding: 10px 10px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-weight: 600;
+    border-radius: 19px;
+    background-color: #eee;
+    box-shadow: 0px 0px 1px 2px rgb(59, 58, 58,.5);
+}
+
+.eachImgCont{
+    width: 100%;
+    height: 250px;
+}
+
+#food-img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dish-details{
+    padding: 20px 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dishName{
+    font-size: 17px;
+    font-weight: 600;
+    width: 85%;
+}
+
+.liked{
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: gainsboro;
+}
+
+.pink{
+    color: pink;
+}
+
+
+#dishDetails{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(32, 30, 30);
+    top: 0%;
+    left: 0%;
+    padding: 30px 20px;
+    display: none;
+}
+
+.food_category{
+    width: 100%;
+    font-size: 23px;
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    margin-bottom: 35px;
+}
+
+.food_name{
+    font-size: 27px;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.food-cont{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.food-cont img{
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.instruction{
+    width: 90%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.insrct{
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+.instruct{
+    font-size: 20px;
+    color: whitesmoke;
+    line-height: 32px;
+}
+
+.video-instruction{
+    width: 90%;
+    margin: 30px auto 0 auto;
+}
+
+.video-instruction iframe{
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+.discharge{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: rgb(223, 39, 15);
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 450px){
+    #dishDetails{
+        padding: 30px 5px;
+    }
+
+    .food-cont img{
+        height: 350px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .video-instruction iframe{
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #favourites{
+        display: flex;
+        justify-content: space-around;
+        column-gap: 10px;
+        row-gap: 0px;
+    }
+
+    #favourites li{
+        width: 60px;
+        height: 100px;
+    }
+
+    #favourites li img{
+        height: 60px;
+    }
+
+    .company{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #form{
+        width: 60%;
+    }
+}
