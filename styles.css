@@ -275,6 +275,30 @@ li{
     font-size: 22px;
 }
 
+.ingredients-item{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+.ingredients-item span{
+    color: whitesmoke;
+    font-size: 22px;
+}
+
+.ingredient-tab{
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+.eachIngredient{
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: whitesmoke;
+}
+
 @media only screen and (max-width: 450px){
     #dishDetails{
         padding: 30px 5px;

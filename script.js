@@ -10,6 +10,9 @@ for(let i=0; i<5; i++){
     getRandomMeal();
 }
 
+
+
+
 async function getRandomMeal() {
 
     const serverResponse = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -23,6 +26,20 @@ async function getRandomMeal() {
 
 function shwowRandomMeal(meal, isTrue = false) {
     let data = meal;
+    console.log(data);
+
+    let ingredients = [];
+
+    for(let item in data){
+        if(item.includes("strIngredient")){
+            if(data[item] === "" || data[item] === null){
+                continue;
+            }else{
+                ingredients.push(data[item]);
+            }
+        }
+    }
+
     const eachDish = document.createElement("div");
     eachDish.classList.add("eachDish");
     eachDish.innerHTML = `
@@ -58,6 +75,12 @@ function shwowRandomMeal(meal, isTrue = false) {
                 <img src="${data.strMealThumb}" alt="">
             </div>
 
+            <div class="ingredients-item">
+                <span>Ingredients: </span>
+                <ul class="ingredient-tab">
+                </ul>
+            </div>
+
             <div class="instruction">
                 <span class="insrct">
                     Instruction:
@@ -72,13 +95,35 @@ function shwowRandomMeal(meal, isTrue = false) {
             </div>
         `
 
+        const ingredient = dishDetails.querySelector(".ingredient-tab");
+        console.log(ingredient)
+
+        function getIngredients(items){
+
+            let data = items;
+            for(let i = 0; i<data.length; i++){
+                let list = document.createElement("li");
+                list.classList.add("eachIngredient")
+                list.innerText = `${data[i]}`;
+                ingredient.appendChild(list);
+            }
+        }
+
+        getIngredients(ingredients);
+        
         const discharge = dishDetails.querySelector(".discharge");
         discharge.addEventListener("click", () => {
             dishDetails.style.display = "none";
             dishDetails.innerHTML = ``;
+            main.style.display = "block";
+            main.style.width = "100%";
+            main.style.minHeight = "0";
         })
 
         dishDetails.style.display = "block";
+        main.style.display = "none";
+        main.style.width = "0";
+        main.style.height = "0";
     })
 
     const likeBtn = eachDish.querySelector("#liked");
@@ -148,6 +193,18 @@ function showFavDish(meal) {
 
     const id = data.idMeal;
 
+    let ingredients = [];
+
+    for(let item in data){
+        if(item.includes("strIngredient")){
+            if(data[item] === "" || data[item] === null){
+                continue;
+            }else{
+                ingredients.push(data[item]);
+            }
+        }
+    }
+
     let youtubeLink = data.strYoutube;
         if(youtubeLink.includes("watch?v=")){
             youtubeLink = youtubeLink.replace("watch?v=", "embed/");
@@ -168,6 +225,12 @@ function showFavDish(meal) {
                     <img src="${data.strMealThumb}" alt="">
                 </div>
 
+                <div class="ingredients-item">
+                    <span>Ingredients: </span>
+                    <ul class="ingredient-tab">
+                    </ul>
+                </div>
+
                 <div class="instruction">
                     <span class="insrct">
                         Instruction:
@@ -181,6 +244,22 @@ function showFavDish(meal) {
                     <iframe src="${youtubeLink}" frameborder="0"></iframe>
                 </div>
             `
+
+            const ingredient = dishDetails.querySelector(".ingredient-tab");
+            console.log(ingredient)
+
+            function getIngredients(items){
+
+                let data = items;
+                for(let i = 0; i<data.length; i++){
+                    let list = document.createElement("li");
+                    list.classList.add("eachIngredient")
+                    list.innerText = `${data[i]}`;
+                    ingredient.appendChild(list);
+                }
+            }
+
+            getIngredients(ingredients)
 
             const discharge = dishDetails.querySelector(".discharge");
             discharge.addEventListener("click", () => {
@@ -244,8 +323,21 @@ function showDish(meal) {
                 <button id="liked" class="liked"><i class="fa fa-heart" aria-hidden="true"></i></button>
             </div>
         `
+        
 
         let id = meal.idMeal;
+
+        let ingredients = [];
+
+        for(let item in meal){
+            if(item.includes("strIngredient")){
+                if(meal[item] === "" || meal[item] === null){
+                    continue;
+                }else{
+                    ingredients.push(meal[item]);
+                }
+            }
+        }
 
         let youtubeLink = meal.strYoutube;
         if(youtubeLink.includes("watch?v=")){
@@ -267,6 +359,12 @@ function showDish(meal) {
                     <img src="${meal.strMealThumb}" alt="">
                 </div>
 
+                <div class="ingredients-item">
+                    <span>Ingredients: </span>
+                    <ul class="ingredient-tab">
+                    </ul>
+                </div>
+
                 <div class="instruction">
                     <span class="insrct">
                         Instruction:
@@ -280,6 +378,22 @@ function showDish(meal) {
                     <iframe src="${youtubeLink}" frameborder="0"></iframe>
                 </div>
             `
+
+            const ingredient = dishDetails.querySelector(".ingredient-tab");
+            console.log(ingredient)
+
+            function getIngredients(items){
+
+                let data = items;
+                for(let i = 0; i<data.length; i++){
+                    let list = document.createElement("li");
+                    list.classList.add("eachIngredient")
+                    list.innerText = `${data[i]}`;
+                    ingredient.appendChild(list);
+                }
+            }
+
+            getIngredients(ingredients);
 
             const discharge = dishDetails.querySelector(".discharge");
             discharge.addEventListener("click", () => {
